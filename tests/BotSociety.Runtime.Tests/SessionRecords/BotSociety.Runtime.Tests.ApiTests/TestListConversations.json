@@ -1,0 +1,50 @@
+﻿{
+  "Entries": [
+    {
+      "RequestUri": "/apisociety/1.1/conversations",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Content-Length": [
+          "0"
+        ],
+        "user_id": [
+          "00000000000000000000000000000000"
+        ],
+        "api_key_public": [
+          "00000000000000000000000000000000"
+        ]
+      },
+      "ResponseBody": "[\r\n  {\r\n    \"_id\": \"5a72e561f34eeb072c293cfd\",\r\n    \"updatedAt\": \"2018-02-01T10:01:30.137Z\",\r\n    \"createdAt\": \"2018-02-01T10:01:05.751Z\",\r\n    \"name\": \"Test Mockup mockup\",\r\n    \"_converted_from\": null,\r\n    \"_cloned_from\": null,\r\n    \"scenario\": null,\r\n    \"selected_variant\": \"white\",\r\n    \"selected_model\": \"iphone6\",\r\n    \"channel\": \"facebook\",\r\n    \"createdByMe\": true\r\n  },\r\n  {\r\n    \"_id\": \"5a72e7f1f34eeb072c293d02\",\r\n    \"updatedAt\": \"2018-02-01T10:12:37.937Z\",\r\n    \"createdAt\": \"2018-02-01T10:12:01.037Z\",\r\n    \"name\": \"Test Bot 2 mockup\",\r\n    \"_converted_from\": null,\r\n    \"_cloned_from\": null,\r\n    \"scenario\": null,\r\n    \"selected_variant\": \"evening\",\r\n    \"selected_model\": \"home\",\r\n    \"channel\": \"googlehome\",\r\n    \"createdByMe\": true\r\n  }\r\n]",
+      "ResponseHeaders": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Cache-Control": [
+          "no-store, proxy-revalidate, no-cache, max-age=0, private"
+        ],
+        "Date": [
+          "Fri, 24 Nov 2017 18:03:59 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "X-Powered-By": [
+          "ASP.NET"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains; preload"
+        ],
+        "x-content-type-options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {}
+}

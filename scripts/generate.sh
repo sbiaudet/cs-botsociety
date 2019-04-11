@@ -1,0 +1,1 @@
+autorest --input-file=../specifications/botsociety-Swagger20.json --csharp --namespace=BotSociety.Runtime --clear-output-folder --add-credentials --output-folder=../src/Generated

@@ -1,0 +1,53 @@
+﻿{
+  "Entries": [
+    {
+      "RequestUri": "/apisociety/1.1/conversations/5a72e561f34eeb072c293cfd",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Content-Length": [
+          "0"
+        ],
+        "user_id": [
+          "00000000000000000000000000000000"
+        ],
+        "api_key_public": [
+          "00000000000000000000000000000000"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"_id\": \"5a72e561f34eeb072c293cfd\",\r\n  \"updatedAt\": \"2018-02-01T10:01:30.137Z\",\r\n  \"createdAt\": \"2018-02-01T10:01:05.751Z\",\r\n  \"name\": \"Test Mockup mockup\",\r\n  \"_first_message\": \"5a72e57af34eeb072c293cff\",\r\n  \"_converted_from\": null,\r\n  \"_cloned_from\": null,\r\n  \"scenario\": null,\r\n  \"options\": {\r\n    \"showWelcomeScreen\": true,\r\n    \"showTypingIndicators\": true,\r\n    \"showKeyboard\": true,\r\n    \"backgroundColor\": \"#FFFFFF\"\r\n  },\r\n  \"menu\": {\r\n    \"nodes\": [\r\n      {\r\n        \"messages\": [],\r\n        \"nodes\": [\r\n          {\r\n            \"messages\": [],\r\n            \"nodes\": [],\r\n            \"title\": \"Contact us\",\r\n            \"id\": \"1a22984b-6b88-2253-9685-ab1521c4548e\"\r\n          }\r\n        ],\r\n        \"title\": \"Help\",\r\n        \"id\": \"0942ff9f-840d-619d-df0f-7afd5fe99025\"\r\n      }\r\n    ]\r\n  },\r\n  \"set_welcome\": false,\r\n  \"ws_page_category\": \"2301\",\r\n  \"ws_fans\": \"0\",\r\n  \"ws_text\": \"Hi, click the button below to start!\",\r\n  \"rtl\": false,\r\n  \"selected_variant\": \"white\",\r\n  \"selected_model\": \"iphone6\",\r\n  \"channel\": \"facebook\",\r\n  \"messages\": [\r\n    {\r\n      \"_id\": \"5a72e57af34eeb072c293cff\",\r\n      \"updatedAt\": \"2018-02-01T10:11:34.560Z\",\r\n      \"createdAt\": \"2018-02-01T10:11:34.560Z\",\r\n      \"_conversation\": \"5a72e561f34eeb072c293cfd\",\r\n      \"custom_label\": null,\r\n      \"is_left_side\": true,\r\n      \"text\": \"I'm a bot\",\r\n      \"type\": \"text\",\r\n      \"next_alternative\": null,\r\n      \"prev_alternative\": null,\r\n      \"attachments\": [\r\n        {\r\n          \"choices\": [],\r\n          \"labels\": [],\r\n          \"size\": \"horizontal\"\r\n        }\r\n      ],\r\n      \"next_message\": \"5a72e7d8f34eeb072c293d00\",\r\n      \"is_next_message_linked\": false,\r\n      \"prev_linked_messages\": [],\r\n      \"prev_message\": null,\r\n      \"show_time\": 1500,\r\n      \"is_first_message\": true,\r\n      \"text_with_variables\": \"I'm a ${whoami}\",\r\n      \"progressiveId\": 1,\r\n      \"intent\": \"default-intent-0\"\r\n    },\r\n    {\r\n      \"_id\": \"5a72e7d8f34eeb072c293d00\",\r\n      \"updatedAt\": \"2018-02-01T10:11:36.560Z\",\r\n      \"createdAt\": \"2018-02-01T10:11:36.560Z\",\r\n      \"_conversation\": \"5a72e561f34eeb072c293cfd\",\r\n      \"custom_label\": null,\r\n      \"is_left_side\": true,\r\n      \"text\": \"I'm a user\",\r\n      \"type\": \"text\",\r\n      \"next_alternative\": null,\r\n      \"prev_alternative\": null,\r\n      \"attachments\": [\r\n        {\r\n          \"choices\": [],\r\n          \"labels\": [],\r\n          \"size\": \"horizontal\"\r\n        }\r\n      ],\r\n      \"next_message\": null,\r\n      \"is_next_message_linked\": false,\r\n      \"prev_linked_messages\": [],\r\n      \"prev_message\": \"5a72e57af34eeb072c293cff\",\r\n      \"show_time\": 1500,\r\n      \"is_first_message\": false,\r\n      \"text_with_variables\": \"I'm a ${whoami}\",\r\n      \"progressiveId\": 2,\r\n      \"intent\": \"custom-intent\"\r\n    }\r\n  ]\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "3179"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Cache-Control": [
+          "no-store, proxy-revalidate, no-cache, max-age=0, private"
+        ],
+        "Date": [
+          "Fri, 24 Nov 2017 18:03:59 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "X-Powered-By": [
+          "ASP.NET"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains; preload"
+        ],
+        "x-content-type-options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {}
+}
