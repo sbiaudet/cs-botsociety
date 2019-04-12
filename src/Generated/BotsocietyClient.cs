@@ -22,7 +22,7 @@ namespace BotSociety.Runtime
     /// This is the documentation for the version 1.1 of the API.
     /// Please feel free to drop questions at info@botsociety.io
     /// </summary>
-    public partial class BotsocietyAPI : ServiceClient<BotsocietyAPI>, IBotsocietyAPI
+    public partial class BotsocietyClient : ServiceClient<BotsocietyClient>, IBotsocietyClient
     {
         /// <summary>
         /// The base URI of the service.
@@ -45,31 +45,31 @@ namespace BotSociety.Runtime
         public ServiceClientCredentials Credentials { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='httpClient'>
         /// HttpClient to be used
         /// </param>
         /// <param name='disposeHttpClient'>
-        /// True: will dispose the provided httpClient on calling BotsocietyAPI.Dispose(). False: will not dispose provided httpClient</param>
-        protected BotsocietyAPI(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
+        /// True: will dispose the provided httpClient on calling BotsocietyClient.Dispose(). False: will not dispose provided httpClient</param>
+        protected BotsocietyClient(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected BotsocietyAPI(params DelegatingHandler[] handlers) : base(handlers)
+        protected BotsocietyClient(params DelegatingHandler[] handlers) : base(handlers)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='rootHandler'>
         /// Optional. The http client handler used to handle http transport.
@@ -77,13 +77,13 @@ namespace BotSociety.Runtime
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected BotsocietyAPI(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
+        protected BotsocietyClient(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -94,7 +94,7 @@ namespace BotSociety.Runtime
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        protected BotsocietyAPI(System.Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
+        protected BotsocietyClient(System.Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -104,7 +104,7 @@ namespace BotSociety.Runtime
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -118,7 +118,7 @@ namespace BotSociety.Runtime
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        protected BotsocietyAPI(System.Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        protected BotsocietyClient(System.Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {
@@ -128,7 +128,7 @@ namespace BotSociety.Runtime
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -139,7 +139,7 @@ namespace BotSociety.Runtime
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BotsocietyAPI(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public BotsocietyClient(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (credentials == null)
             {
@@ -153,7 +153,7 @@ namespace BotSociety.Runtime
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -162,11 +162,11 @@ namespace BotSociety.Runtime
         /// HttpClient to be used
         /// </param>
         /// <param name='disposeHttpClient'>
-        /// True: will dispose the provided httpClient on calling BotsocietyAPI.Dispose(). False: will not dispose provided httpClient</param>
+        /// True: will dispose the provided httpClient on calling BotsocietyClient.Dispose(). False: will not dispose provided httpClient</param>
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BotsocietyAPI(ServiceClientCredentials credentials, HttpClient httpClient, bool disposeHttpClient) : this(httpClient, disposeHttpClient)
+        public BotsocietyClient(ServiceClientCredentials credentials, HttpClient httpClient, bool disposeHttpClient) : this(httpClient, disposeHttpClient)
         {
             if (credentials == null)
             {
@@ -180,7 +180,7 @@ namespace BotSociety.Runtime
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -194,7 +194,7 @@ namespace BotSociety.Runtime
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BotsocietyAPI(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public BotsocietyClient(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (credentials == null)
             {
@@ -208,7 +208,7 @@ namespace BotSociety.Runtime
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -222,7 +222,7 @@ namespace BotSociety.Runtime
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BotsocietyAPI(System.Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public BotsocietyClient(System.Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -241,7 +241,7 @@ namespace BotSociety.Runtime
         }
 
         /// <summary>
-        /// Initializes a new instance of the BotsocietyAPI class.
+        /// Initializes a new instance of the BotsocietyClient class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -258,7 +258,7 @@ namespace BotSociety.Runtime
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BotsocietyAPI(System.Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public BotsocietyClient(System.Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {
@@ -466,7 +466,7 @@ namespace BotSociety.Runtime
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse<IList<ConversationInfo>>> ConversationsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse<IList<ConversationInfo>>> GetConversationsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -476,7 +476,7 @@ namespace BotSociety.Runtime
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "Conversations", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "GetConversations", tracingParameters);
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;

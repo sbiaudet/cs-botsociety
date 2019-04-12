@@ -19,7 +19,7 @@ namespace BotSociety.Runtime
     /// This is the documentation for the version 1.1 of the API.
     /// Please feel free to drop questions at info@botsociety.io
     /// </summary>
-    public partial interface IBotsocietyAPI : System.IDisposable
+    public partial interface IBotsocietyClient : System.IDisposable
     {
         /// <summary>
         /// The base URI of the service.
@@ -95,7 +95,7 @@ namespace BotSociety.Runtime
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<HttpOperationResponse<IList<ConversationInfo>>> ConversationsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<HttpOperationResponse<IList<ConversationInfo>>> GetConversationsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Get conversation

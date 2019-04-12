@@ -28,7 +28,7 @@ namespace BotSociety.Runtime.Tests
         {
             UseClientFor(async client =>
             {
-                var conversations = await client.ConversationsAsync();
+                var conversations = await client.GetConversationsAsync();
                 Assert.IsNotEmpty(conversations);
             });
         }

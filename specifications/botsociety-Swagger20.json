@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0",
-    "title": "Botsociety API",
+    "version": "1.1",
+    "title": "Botsociety Client",
     "description": "Retrieve the content of your chatbot designs automagically.\nThis is the documentation for the version 1.1 of the API.\nPlease feel free to drop questions at info@botsociety.io",
     "contact": {}
   },
@@ -57,7 +57,7 @@
       "get": {
         "description": "This endpoint will list all of your conversations, together with their name and other details.",
         "summary": "List conversations",
-        "operationId": "Conversations",
+        "operationId": "GetConversations",
         "deprecated": false,
         "produces": [
           "application/json"

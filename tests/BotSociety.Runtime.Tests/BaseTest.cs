@@ -16,18 +16,18 @@ namespace BotSociety.Runtime.Tests
 
         private string ClassName => GetType().FullName;
 
-        private IBotsocietyAPI GetClient(DelegatingHandler handler, string userId = UserId, string apiKey = ApiKey)
+        private IBotsocietyClient GetClient(DelegatingHandler handler, string userId = UserId, string apiKey = ApiKey)
         {
-            var client = new BotsocietyAPI(new ApiKeyServiceClientCredentials(userId, apiKey), handlers: handler);
+            var client = new BotsocietyClient(new ApiKeyServiceClientCredentials(userId, apiKey), handlers: handler);
             return client;
         }
 
-        protected void UseClientFor(Func<IBotsocietyAPI, Task> doTest, string className = null, [CallerMemberName] string methodName = "")
+        protected void UseClientFor(Func<IBotsocietyClient, Task> doTest, string className = null, [CallerMemberName] string methodName = "")
         {
             using (MockContext context = MockContext.Start(className ?? ClassName, methodName))
             {
                 HttpMockServer.Initialize(className ?? ClassName, methodName, mode);
-                IBotsocietyAPI client = GetClient(HttpMockServer.CreateInstance());
+                IBotsocietyClient client = GetClient(HttpMockServer.CreateInstance());
                 doTest(client).Wait();
                 context.Stop();
             }

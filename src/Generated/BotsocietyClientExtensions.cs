@@ -13,9 +13,9 @@ namespace BotSociety.Runtime
     using System.Threading.Tasks;
 
     /// <summary>
-    /// Extension methods for BotsocietyAPI.
+    /// Extension methods for BotsocietyClient.
     /// </summary>
-    public static partial class BotsocietyAPIExtensions
+    public static partial class BotsocietyClientExtensions
     {
             /// <summary>
             /// Auth
@@ -49,7 +49,7 @@ namespace BotSociety.Runtime
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static void Auth(this IBotsocietyAPI operations)
+            public static void Auth(this IBotsocietyClient operations)
             {
                 operations.AuthAsync().GetAwaiter().GetResult();
             }
@@ -89,7 +89,7 @@ namespace BotSociety.Runtime
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task AuthAsync(this IBotsocietyAPI operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task AuthAsync(this IBotsocietyClient operations, CancellationToken cancellationToken = default(CancellationToken))
             {
                 (await operations.AuthWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
@@ -104,9 +104,9 @@ namespace BotSociety.Runtime
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static IList<ConversationInfo> Conversations(this IBotsocietyAPI operations)
+            public static IList<ConversationInfo> GetConversations(this IBotsocietyClient operations)
             {
-                return operations.ConversationsAsync().GetAwaiter().GetResult();
+                return operations.GetConversationsAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -122,9 +122,9 @@ namespace BotSociety.Runtime
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IList<ConversationInfo>> ConversationsAsync(this IBotsocietyAPI operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<ConversationInfo>> GetConversationsAsync(this IBotsocietyClient operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ConversationsWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetConversationsWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -146,7 +146,7 @@ namespace BotSociety.Runtime
             /// <param name='conversationId'>
             /// ID of the Conversation to retrieve.
             /// </param>
-            public static Conversation GetConversation(this IBotsocietyAPI operations, string conversationId)
+            public static Conversation GetConversation(this IBotsocietyClient operations, string conversationId)
             {
                 return operations.GetConversationAsync(conversationId).GetAwaiter().GetResult();
             }
@@ -170,7 +170,7 @@ namespace BotSociety.Runtime
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Conversation> GetConversationAsync(this IBotsocietyAPI operations, string conversationId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Conversation> GetConversationAsync(this IBotsocietyClient operations, string conversationId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetConversationWithHttpMessagesAsync(conversationId, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -197,7 +197,7 @@ namespace BotSociety.Runtime
             /// ID of the Message to retrieve. This can be or the unique ID or the
             /// progressive ID.
             /// </param>
-            public static Message GetMessage(this IBotsocietyAPI operations, string conversationId, string messageId)
+            public static Message GetMessage(this IBotsocietyClient operations, string conversationId, string messageId)
             {
                 return operations.GetMessageAsync(conversationId, messageId).GetAwaiter().GetResult();
             }
@@ -224,7 +224,7 @@ namespace BotSociety.Runtime
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Message> GetMessageAsync(this IBotsocietyAPI operations, string conversationId, string messageId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Message> GetMessageAsync(this IBotsocietyClient operations, string conversationId, string messageId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetMessageWithHttpMessagesAsync(conversationId, messageId, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -246,7 +246,7 @@ namespace BotSociety.Runtime
             /// <param name='conversationId'>
             /// ID of the Conversation to retrieve.
             /// </param>
-            public static Variable GetVariables(this IBotsocietyAPI operations, string conversationId)
+            public static Variable GetVariables(this IBotsocietyClient operations, string conversationId)
             {
                 return operations.GetVariablesAsync(conversationId).GetAwaiter().GetResult();
             }
@@ -268,7 +268,7 @@ namespace BotSociety.Runtime
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Variable> GetVariablesAsync(this IBotsocietyAPI operations, string conversationId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Variable> GetVariablesAsync(this IBotsocietyClient operations, string conversationId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetVariablesWithHttpMessagesAsync(conversationId, null, cancellationToken).ConfigureAwait(false))
                 {
