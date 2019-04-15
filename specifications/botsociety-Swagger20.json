@@ -520,6 +520,8 @@
         "attachments": {
           "example": [
             {
+              "images" : "",
+              "video" : "",
               "choices": [],
               "labels": [],
               "size": "horizontal"
@@ -593,6 +595,8 @@
     "Attachment": {
       "title": "Attachment",
       "example": {
+        "image": "",
+        "video": "",
         "choices": [],
         "labels": [],
         "size": "horizontal"
@@ -615,6 +619,14 @@
         },
         "size": {
           "example": "horizontal",
+          "type": "string"
+        },
+        "image": {
+          "example": "",
+          "type": "string"
+        },
+        "video": {
+          "example": "",
           "type": "string"
         }
       },

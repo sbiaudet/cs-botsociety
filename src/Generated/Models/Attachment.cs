@@ -28,11 +28,13 @@ namespace BotSociety.Runtime.Models
         /// <summary>
         /// Initializes a new instance of the Attachment class.
         /// </summary>
-        public Attachment(IList<object> choices, IList<string> labels, string size)
+        public Attachment(IList<object> choices, IList<string> labels, string size, string image = default(string), string video = default(string))
         {
             Choices = choices;
             Labels = labels;
             Size = size;
+            Image = image;
+            Video = video;
             CustomInit();
         }
 
@@ -55,6 +57,16 @@ namespace BotSociety.Runtime.Models
         /// </summary>
         [JsonProperty(PropertyName = "size")]
         public string Size { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "image")]
+        public string Image { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "video")]
+        public string Video { get; set; }
 
         /// <summary>
         /// Validate the object.
